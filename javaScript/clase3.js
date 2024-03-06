@@ -68,6 +68,8 @@ function sumar (numeroUno,numeroDos){
 
 //Clase #4
 
+/*
+
 //Arreglos (Arrays)
 let numeros = [10.34,1,1000,350.456]
 //Cualquier tipo de dato
@@ -143,3 +145,94 @@ numeros.forEach(numero =>{
 //la funcion debe crear el arreglo
 //Usar Metodos de arreglos y mostrar los resultados (para arraglo minimo un metodo)
 //Usar callbackfn
+*/
+
+//------- Class 5 -------//
+
+//----- CallBack Functions ----
+
+const convertirGrados = gradosFahrenheit => (5/9)*(gradosFahrenheit-32);
+const Temperatura = (callBackFn,grados)=>{
+    // Usa la funcion que llegó como parametro 
+    let gradosCentigrados = callBackFn(grados);
+    console.log(gradosCentigrados);
+}
+
+Temperatura(convertirGrados,80);
+
+//----- Objects ----
+
+// ----- Primera Forma ------//
+
+const perro = {
+    Nombre: "Otto",
+    Edad:3,
+    Color:"Negro",
+    nombrarPerro(Nombre){
+        return this.Nombre = Nombre;
+    },
+    caracteristicas:{
+        Raza: "BullDog",
+        Altura:20,
+        peso:30,
+        vacunas:true,
+        alimento:"NutreCan",
+    }
+}
+
+// ----- Segunda Forma ------//
+
+const auto ={};
+auto.modelo = 1986;
+auto.color = "Azul"
+auto.caracteristicas = {
+    marca:"BMW",
+    cilindraje:2500,
+}
+
+console.log(perro);
+console.log(auto);
+
+// ----- Tercera Forma ------//
+
+let color = "Rojo";
+let modelo = 1985;
+let caracteristicas={
+    marca:"BMW",
+    cilindraje:2500,
+}
+
+const carro = {color,modelo,caracteristicas}
+console.log(carro);
+
+// ----- Cuarta Forma ------//
+
+const animal = new Object;
+animal.Nombre = "Serpiente";
+console.log(animal);
+
+// ----- Acceder a las propiedades ------//
+
+// ----- Primera Forma ------//
+console.log(perro.Nombre);
+console.log(perro.caracteristicas.Raza);
+
+// ----- Segunda Forma ------//
+console.log(perro["Nombre"]);
+
+const Array = {perro,animal};
+/*
+Array.forEach((OBJETO) => {
+    // ----- Cambiar Propiedad ------//
+    OBJETO.Nombre = "Pepe";
+    //------ Nueva Propiedad -------//
+    OBJETO.CreadoEn = 2024;
+})*/
+
+console.log(perro);
+console.log(animal);
+
+// Obtener las Propiedades
+
+const {Color} = perro;
+console.log(Color);
